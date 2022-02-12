@@ -53,18 +53,31 @@ public class HomePage {
 		driver.get("http://wrappixel.com/demos/admin-templates/admin-pro/main/ui-notification");
 	}
 	
-	public List<ElementValidatorAbstract> getElementValidators(){
+	public List<NotificationValidator> getNotificationValidators(){
+		
+		//return (List<ElementValidatorAbstract>) new NotificationValidator(infoBtn,infoAlert);
 		
 		return Arrays.asList(
-				new NotificationValidator(infoBtn,infoAlert),
-				new NotificationValidator(warningBtn,warningAlert),
-				new NotificationValidator(successBtn,successAlert),
-				new NotificationValidator(dangerBtn,errorAlert)
+			new NotificationValidator(infoBtn,infoAlert),
+			new NotificationValidator(warningBtn,warningAlert),
+			new NotificationValidator(successBtn,successAlert),
+			new NotificationValidator(dangerBtn,errorAlert)
+			
+			
+				);		
+		
+	}
+	
+	public List<DismissalAlertValidator> getDismissalAlertValidator(){
+		return Arrays.asList(
+				new DismissalAlertValidator(infoDismissBtn),
+				new DismissalAlertValidator(successDismissBtn),
+				new DismissalAlertValidator(dangerDismissBtn),
+				new DismissalAlertValidator(warningDismissBtn)
 				
 				
-				);
-		
-		
+					);		
+			
 	}
 	
 	
